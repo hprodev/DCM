@@ -6,7 +6,7 @@ from django.dispatch import receiver
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     preferred_currency = models.CharField(max_length=3, default='USD')
-    email_reminders = models.BooleanField(default=True)
+    email_reminders = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

@@ -27,12 +27,13 @@ class App(models.Model):
         ('useful', 'Useful'),
         ('maybe_useful', 'Maybe Useful'),
         ('useless', 'Useless'),
+        ('okay', 'Okay')
     ]
     
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_apps')
     category = models.ForeignKey(AppCategory, on_delete=models.PROTECT, related_name='apps')
-    app_name = models.CharField(max_length=100)
-    platform = models.CharField(max_length=20, choices=PLATFORM_CHOICES)
+    app_name = models.CharField(max_length=50)
+    platform = models.CharField(max_length=30, choices=PLATFORM_CHOICES)
     storage_size_mb = models.IntegerField(default=0)
     last_used_date = models.DateField(blank=True, null=True)
     usefulness_rating = models.CharField(max_length=20, choices=RATING_CHOICES, default='useful')
