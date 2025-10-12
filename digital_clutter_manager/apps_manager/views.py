@@ -3,6 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from django.utils import timezone
+from .permissions import IsOwner
 from datetime import timedelta
 from .models import App, AppCategory
 from .serializers import AppSerializer, AppCreateSerializer, AppCategorySerializer
@@ -14,7 +15,7 @@ class AppCategoryViewSet(viewsets.ReadOnlyModelViewSet):
 
 class AppViewSet(viewsets.ModelViewSet):
     serializer_class = AppSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwner]
     
     def get_queryset(self):
         return App.objects.filter(user=self.request.user)

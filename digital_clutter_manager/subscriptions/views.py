@@ -3,6 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from django.utils import timezone
+from .permissions import IsOwner
 from .models import Subscription, SubscriptionCategory
 from .serializers import SubscriptionSerializer, SubscriptionCreateSerializer, SubscriptionCategorySerializer
 
@@ -13,8 +14,8 @@ class SubscriptionCategoryViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SubscriptionViewSet(viewsets.ModelViewSet):
     serializer_class = SubscriptionSerializer
-    permission_classes = [IsAuthenticated]
-    
+    permission_classes = [IsAuthenticated, IsOwner]
+        
     def get_queryset(self):
         return Subscription.objects.filter(user=self.request.user)
     
