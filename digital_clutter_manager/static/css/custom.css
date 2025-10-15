@@ -1,0 +1,67 @@
+/* Custom styling for Django REST Framework Browsable API */
+
+.navbar-inverse {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 1.5em !important;
+}
+
+.navbar-nav > li > a {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-nav > li > a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.page-header {
+    border-bottom: 3px solid #667eea !important;
+}
+
+.page-header h1 {
+    color: #667eea !important;
+}
+
+.btn-primary {
+    background: #667eea !important;
+    border-color: #667eea !important;
+}
+
+.btn-primary:hover {
+    background: #764ba2 !important;
+    border-color: #764ba2 !important;
+}
+
+.well {
+    border: 2px solid #f0f0f0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+pre {
+    background: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 6px !important;
+}
+
+.label-success {
+    background: #28a745 !important;
+}
+
+.label-info {
+    background: #17a2b8 !important;
+}
+
+.label-warning {
+    background: #ffc107 !important;
+}
+
+.label-danger {
+    background: #dc3545 !important;
+}
